@@ -4,4 +4,5 @@ class APIUrls {
   static const modelUrl = '$baseUrl/models';
   static const completionUrl = '$baseUrl/completions';
   static const chatUrl = '$baseUrl/chat/completions';
+  static const ApiKey= 'l';
 }

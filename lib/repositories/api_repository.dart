@@ -10,10 +10,11 @@ class APIRepository {
   Future<List<OpenAIModel>> getModels() async {
     try {
       var response = await http.get(Uri.parse(APIUrls.modelUrl), headers: {
-        'Authorization': 'Bearer ${FlutterConfig.get('API_KEY')}',
+        'Authorization': 'Bearer ${APIUrls.ApiKey}',
       });
 
-      Map jsonResponse = json.decode(response.body);
+      Utf8Decoder decoder = Utf8Decoder();
+      Map jsonResponse = jsonDecode(decoder.convert(response.bodyBytes));
       if (jsonResponse['error'] != null) {
         throw http.ClientException(jsonResponse['error']['message']);
       }
@@ -38,7 +39,7 @@ class APIRepository {
       var response = await http.post(
         Uri.parse(APIUrls.completionUrl),
         headers: {
-          'Authorization': 'Bearer ${FlutterConfig.get('API_KEY')}',
+          'Authorization': 'Bearer ${APIUrls.ApiKey}',
           'Content-Type': 'application/json',
         },
         body: jsonEncode({
@@ -47,7 +48,8 @@ class APIRepository {
           "max_tokens": 1000,
         }),
       );
-      Map jsonResponse = json.decode(response.body);
+      Utf8Decoder decoder = Utf8Decoder();
+      Map jsonResponse = jsonDecode(decoder.convert(response.bodyBytes));
       if (jsonResponse['error'] != null) {
         throw http.ClientException(jsonResponse['error']['message']);
       }
@@ -81,7 +83,7 @@ class APIRepository {
       var response = await http.post(
         Uri.parse(APIUrls.chatUrl),
         headers: {
-          'Authorization': 'Bearer ${FlutterConfig.get('API_KEY')}',
+          'Authorization': 'Bearer ${APIUrls.ApiKey}',
           'Content-Type': 'application/json',
         },
         body: jsonEncode({
@@ -92,12 +94,12 @@ class APIRepository {
           "max_tokens": 1000,
         }),
       );
-      Map jsonResponse = json.decode(response.body);
+      Utf8Decoder decoder = Utf8Decoder();
+      Map jsonResponse = jsonDecode(decoder.convert(response.bodyBytes));
       if (jsonResponse['error'] != null) {
         throw http.ClientException(jsonResponse['error']['message']);
       }
       List<OpenAICompletion> completions = [];
-
       if (jsonResponse['choices'].length > 0) {
         completions = List.generate(
           jsonResponse['choices'].length,
