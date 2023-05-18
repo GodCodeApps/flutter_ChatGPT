@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chatgpt/repositories/api_repository.dart';
+import 'package:flutter_chatgpt/repositories/config.dart';
 import 'package:flutter_chatgpt/repositories/repos.dart';
 import 'package:flutter_chatgpt/screens/entry.dart';
 import 'constants/colors.dart';
@@ -10,16 +11,14 @@ import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'business_logic/export.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_config/flutter_config.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   FirebaseApp app = await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  // await dotenv.load();
-  await FlutterConfig.loadEnvVariables();
+  await Config.fetchApiKey();
   runApp(const ChatGptApp());
 }
 

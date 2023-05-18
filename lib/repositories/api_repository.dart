@@ -1,20 +1,24 @@
 import 'dart:convert';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_config/flutter_config.dart';
 import '../constants/api_urls.dart';
 import '../models/exports.dart';
+
+import 'config.dart';
 
 class APIRepository {
   // fetch OpenAIModels
   Future<List<OpenAIModel>> getModels() async {
+    const storage = FlutterSecureStorage();
+    String? apiKey = await storage.read(key: 'API_KEY');
+
+
     try {
       var response = await http.get(Uri.parse(APIUrls.modelUrl), headers: {
-        'Authorization': 'Bearer ${APIUrls.ApiKey}',
+        'Authorization': 'Bearer $apiKey',
       });
 
-      Utf8Decoder decoder = Utf8Decoder();
-      Map jsonResponse = jsonDecode(decoder.convert(response.bodyBytes));
+      Map jsonResponse = json.decode(response.body);
       if (jsonResponse['error'] != null) {
         throw http.ClientException(jsonResponse['error']['message']);
       }
@@ -35,11 +39,15 @@ class APIRepository {
     required String model,
   }) async {
     print('text:$text, model: $model');
+    const storage = FlutterSecureStorage();
+    String? apiKey = await storage.read(key: 'API_KEY');
+
+
     try {
       var response = await http.post(
         Uri.parse(APIUrls.completionUrl),
         headers: {
-          'Authorization': 'Bearer ${APIUrls.ApiKey}',
+          'Authorization': 'Bearer $apiKey',
           'Content-Type': 'application/json',
         },
         body: jsonEncode({
@@ -48,8 +56,7 @@ class APIRepository {
           "max_tokens": 1000,
         }),
       );
-      Utf8Decoder decoder = Utf8Decoder();
-      Map jsonResponse = jsonDecode(decoder.convert(response.bodyBytes));
+      Map jsonResponse = json.decode(response.body);
       if (jsonResponse['error'] != null) {
         throw http.ClientException(jsonResponse['error']['message']);
       }
@@ -79,11 +86,15 @@ class APIRepository {
     required String model,
   }) async {
     print('text:$text, model: $model');
+    const storage = FlutterSecureStorage();
+    String? apiKey = await storage.read(key: 'API_KEY');
+
+
     try {
       var response = await http.post(
         Uri.parse(APIUrls.chatUrl),
         headers: {
-          'Authorization': 'Bearer ${APIUrls.ApiKey}',
+          'Authorization': 'Bearer $apiKey',
           'Content-Type': 'application/json',
         },
         body: jsonEncode({
@@ -94,12 +105,12 @@ class APIRepository {
           "max_tokens": 1000,
         }),
       );
-      Utf8Decoder decoder = Utf8Decoder();
-      Map jsonResponse = jsonDecode(decoder.convert(response.bodyBytes));
+      Map jsonResponse = json.decode(response.body);
       if (jsonResponse['error'] != null) {
         throw http.ClientException(jsonResponse['error']['message']);
       }
       List<OpenAICompletion> completions = [];
+
       if (jsonResponse['choices'].length > 0) {
         completions = List.generate(
           jsonResponse['choices'].length,
