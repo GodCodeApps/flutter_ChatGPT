@@ -8,7 +8,7 @@ This project is making use of BLoc, openAI API and GoogleAuth
 ##支持平台 安卓 ios mac windows web
 
 ##效果图
-<img src="https://img-blog.csdnimg.cn/2020102116384135.png](https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/4f760be3-55d9-4019-8327-2aa25f4ffc6e" width="300px">
+<img src="https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/4f760be3-55d9-4019-8327-2aa25f4ffc6e" width="300px">
 
 
 ##体验地址
