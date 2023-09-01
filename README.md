@@ -3,12 +3,12 @@
 A Flutter project implementing openAI chatGPT.
 This project is making use of BLoc, openAI API and GoogleAuth
 ## Getting Started
-## 体验地址
+## 在线体验地址
 https://ai.firefix.cn/
 
 <img src="https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/af287508-fb09-4c09-9871-9dd4ce85938c" width="700px">
 
-## 支持平台 Android IOS MacOS Windows Web
+## 支持多平台平台 Android IOS MacOS Windows Web
 
 <img src="https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/aadaae85-c50d-4f20-8f02-3b5abe29c169" width="700px">
 
@@ -19,5 +19,5 @@ https://ai.firefix.cn/
 <img src="https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/049ace76-8832-43ae-bcc8-2125f93b7435" width="300px">
 
 ## 想要完整源码联系：
-## 微信号:GodeCodeApps
-## QQ号:916193549
+## 微信号: GodeCodeApps
+## QQ号: 916193549
