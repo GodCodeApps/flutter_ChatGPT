@@ -18,6 +18,6 @@ https://ai.firefix.cn/
 <img src="https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/44e8aa83-2960-4b56-b20a-f58b66649c46" width="300px">
 <img src="https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/049ace76-8832-43ae-bcc8-2125f93b7435" width="300px">
 
-## 想要完整源码地址联系：
+## 想要完整源码联系：
 ## 微信号:GodeCodeApps
 ## QQ号:916193549
