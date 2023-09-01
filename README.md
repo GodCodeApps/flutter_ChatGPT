@@ -8,7 +8,9 @@ This project is making use of BLoc, openAI API and GoogleAuth
 ##支持平台 安卓 ios mac windows web
 
 ##效果图
-![screen-1](https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/d9469f73-44d9-4be3-a1fc-b495e4afbea6) ![screen-2](https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/0b576fcb-99c5-4bdf-b622-785f3c96392f) ![screen-3](https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/bc9c4e7d-4937-414d-8704-f32322579b39) ![screen-4](https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/e41c40ff-15fb-4189-9993-f8f88fa68789)
+<img src="https://img-blog.csdnimg.cn/2020102116384135.png](https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/4f760be3-55d9-4019-8327-2aa25f4ffc6e" width="300px">
+
+
 ##体验地址
 https://ai.firefix.cn/
 ##想要完整源码地址联系：
