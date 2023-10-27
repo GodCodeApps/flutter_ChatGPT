@@ -5,6 +5,8 @@ This project is making use of BLoc, openAI API and GoogleAuth
 ## Getting Started
 ## 在线体验地址
 https://ai.firefix.cn/
+## 短视频去水印 支持 Tiktok 、Youtobe、 抖音 、快手、西瓜视频 等180个平台
+https://unwatermarker.cn
 
 <img src="https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/af287508-fb09-4c09-9871-9dd4ce85938c" width="700px">
 
