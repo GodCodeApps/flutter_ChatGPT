@@ -7,7 +7,6 @@ This project is making use of BLoc, openAI API and GoogleAuth
 https://ai.firefix.cn/
 ## 短视频去水印 支持 Tiktok 、Youtobe、 抖音 、快手、西瓜视频 等180个平台
 https://unwatermarker.cn
-<img src="[https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/af287508-fb09-4c09-9871-9dd4ce85938c](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3aefd6d061e34ad5916c5818512cc2eb~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=4096\&h=4096\&s=2649167\&e=jpg\&b=17171b)" width="700px">
 
 <img src="https://github.com/PengyanMingJack/flutter_ChatGPT/assets/15820159/af287508-fb09-4c09-9871-9dd4ce85938c" width="700px">
 
